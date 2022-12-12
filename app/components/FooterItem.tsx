@@ -1,4 +1,4 @@
-import { IFooterItemProps } from "../../public/user";
+import { IFooterItemProps } from "../../user";
 
 import Image from "next/image";
 

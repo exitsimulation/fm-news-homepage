@@ -38,3 +38,22 @@ interface ITopMenuElementProps {
   className?: string;
   children?: React.ReactNode;
 }
+
+interface IWindowStateProps {
+  width: number;
+  height: number;
+}
+
+interface IBurgerMenuProps {
+  openChangedHandler: any;
+  open: boolean;
+  menuElements: ITopMenuElementProps[];
+  className?: string;
+  children?: React.ReactNode;
+}
+
+interface IBurgerButtonprops {
+  openChangedHandler: any;
+  className?: string;
+  children?: React.ReactNode;
+}

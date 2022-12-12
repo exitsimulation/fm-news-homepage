@@ -1,4 +1,4 @@
-import { IFooterItemProps, IFooterProps } from "../../public/user";
+import { IFooterItemProps, IFooterProps } from "../../user";
 import FooterItem from "./FooterItem";
 
 import imgRetroPc from "../../public/images/image-retro-pcs.jpg";
@@ -37,7 +37,7 @@ const Footer = ({ className, children }: IFooterProps) => {
             title={f.title}
             text={f.text}
             img={f.img}
-            className={"flex flex-row gap-4"}
+            className={"flex h-[120px] flex-row gap-4"}
           ></FooterItem>
         );
       })}

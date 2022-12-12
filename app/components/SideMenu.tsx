@@ -1,4 +1,4 @@
-import { ISideMenuArticleProps, ISideMenuProps } from "../../public/user";
+import { ISideMenuArticleProps, ISideMenuProps } from "../../user";
 
 const SideMenu = ({ children, className }: ISideMenuProps) => {
   let templateArticles: ISideMenuArticleProps[] = [
@@ -22,25 +22,21 @@ const SideMenu = ({ children, className }: ISideMenuProps) => {
 
       {templateArticles.map((t, index) => {
         return (
-          <>
-            <div className={"flex flex-col gap-2 text-off-white"}>
-              <div
-                className={
-                  "cursor-pointer text-xl font-bold hover:text-soft-orange"
-                }
-              >
-                {t.title}
-              </div>
-              <div className={"text-grayish-blue"}>{t.text}</div>
-              {index < 2 ? (
-                <div
-                  className={"my-8 h-[1px] w-full bg-dark-grayish-blue"}
-                ></div>
-              ) : (
-                ""
-              )}
+          <div className={"flex flex-col gap-2 text-off-white"} key={t.title}>
+            <div
+              className={
+                "cursor-pointer text-xl font-bold hover:text-soft-orange"
+              }
+            >
+              {t.title}
             </div>
-          </>
+            <div className={"text-grayish-blue"}>{t.text}</div>
+            {index < 2 ? (
+              <div className={"my-8 h-[1px] w-full bg-dark-grayish-blue"}></div>
+            ) : (
+              ""
+            )}
+          </div>
         );
       })}
     </div>

@@ -1,6 +1,11 @@
-import { IHeroArticleProps } from "../../public/user";
+// prettier-ignore
+"use client"
+
+import { IHeroArticleProps } from "../../user";
 import Image from "next/image";
 import imgWeb3Desktop from "../../public/images/image-web-3-desktop.jpg";
+import imgWeb3Mobile from "../../public/images/image-web-3-mobile.jpg";
+import useWindowSize from "./useWindowSize";
 
 const HeroArticle = ({
   title,
@@ -8,15 +13,20 @@ const HeroArticle = ({
   className,
   children,
 }: IHeroArticleProps) => {
+  let size = useWindowSize();
+
   return (
     <div className={className}>
-      <div className={"col-span-full"}>
-        <Image src={imgWeb3Desktop} alt={"Web3 Desktop"} />
+      <div className={"md:col-span-full"}>
+        <Image
+          src={size.width > 375 ? imgWeb3Desktop : imgWeb3Mobile}
+          alt={"Web3 Desktop"}
+        />
       </div>
-      <div className={"text-6xl font-extrabold"}>
+      <div className={"text-5xl font-extrabold md:text-6xl"}>
         The Bright Future of Web 3.0?
       </div>
-      <div className={"flex flex-col gap-12 "}>
+      <div className={"flex flex-col gap-4 md:gap-10 "}>
         <div>
           We dive into the next evolution of the web that claims to put the
           power of the platforms back into the hands of the people. But is it

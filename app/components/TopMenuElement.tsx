@@ -1,4 +1,4 @@
-import { ITopMenuElementProps } from "../../public/user";
+import { ITopMenuElementProps } from "../../user";
 
 const TopMenuElement = ({
   className,
